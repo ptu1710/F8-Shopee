@@ -6,12 +6,14 @@
 .header__navbar {
     display: flex;
     justify-content: space-between;
+    font-size: 1.3rem;
 }
+
 .header__navbar-list {
+    display: flex;
     list-style: none;
     padding-left: 0;
     margin-top: 6px;
-    font-size: 1.3rem;
 }
 
 .header__navbar-item {
@@ -39,7 +41,7 @@
     font-weight: 450;
 }
 
-.header__navbar-item--saparate::after {
+.header__navbar-item--separate::after {
     content: "";
     display: block;
     position: absolute;
@@ -48,7 +50,6 @@
     right: -9px;
     top: 50%;
     transform: translateY(-50%);
-
 }
 
 .header__navbar-icon-link {
@@ -115,6 +116,8 @@
 
 /* Header Notification */
 .header__noti {
+    --growth-from: 0;
+    --growth-to: 1;
     position: absolute;
     top: 110%;
     width: 400px;
@@ -224,6 +227,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 12px;
+    margin-top: 8px;
 }
 
 .auth-form__heading {
@@ -267,7 +272,7 @@
 }
 
 .auth-form__controls {
-    padding: 80px 0 24px 0;
+    padding: 60px 0 24px 0;
     display: flex;
     justify-content: flex-end;
 }
@@ -278,9 +283,9 @@
 
 .auth-form__socials {
     background-color: #f5f5f5;
-    padding: 12px 32px;
+    padding: 10px 32px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .auth-form__socials-btn--facebook {
@@ -309,4 +314,28 @@
 
 .auth-form__socials-text {
     margin: 0 20px;
+}
+
+.auth-form__help {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-top: 8px;
+}
+
+.auth-form__help-link {
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #939393;
+}
+
+.auth-form__help-separate {
+    display: block;
+    border-left: 2px solid var(--border-color);
+    margin: 0 16px;
+    height: 22px;
+}
+
+.auth-form__help-forgot {
+    color: var(--primary-color);
 }
