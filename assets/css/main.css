@@ -6,7 +6,7 @@
 .header__navbar {
     display: flex;
     justify-content: space-between;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 
 .header__navbar-list {
@@ -24,11 +24,11 @@
 
 .header__navbar-item,
 .header__navbar-item-link {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     color: var(--white-color);
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .header__navbar-item:hover,
@@ -57,6 +57,10 @@
     text-decoration: none;
 }
 
+.header__navbar-item a:nth-child(2) {
+    margin-left: 3px;
+}
+
 .header__navbar-icon {
     font-size: 1.6rem;
     margin: 0 4px;
@@ -67,7 +71,96 @@
     color: var(--white-color);
 }
 
+.header__navbar-user {
+    position: relative;
+    display: flex;
+    justify-items: center;
+}
+
+.header__navbar-user:hover .header__navbar-user-menu {
+    display: block;
+}
+
+.header__navbar-user-img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 0 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.header__navbar-user-name {
+    font-weight: 450;
+}
+
+.header__navbar-user-menu {
+    z-index: 1;
+    position: absolute;
+    padding-left: 0;
+    width: 140px;
+    top: 110%;
+    right: 0;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    list-style: none;
+    box-shadow: 0 0 5px rgb(189, 189, 189);
+    display: none;
+    animation: fadeIn ease-in .15s;
+}
+
+.header__navbar-user-menu::before {
+    content: "";
+    position: absolute;
+    right: 10%;
+    top: -22px;
+    border-width: 14px 18px;
+    border-style: solid;
+    border-color: transparent transparent var(--white-color) transparent;
+}
+
+.header__navbar-user-menu::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    top: -10px;
+    width: 98px;
+    height: 10px;
+}
+
+.header__navbar-user-item--separate {
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.header__navbar-user-item:first-child {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+
+.header__navbar-user-item:last-child {
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.header__navbar-user-item:last-child a {
+    color: var(--primary-color);
+}
+
+.header__navbar-user-item:hover {
+    background-color: #fafafa;
+}
+
+.header__navbar-user-item a {
+    display: block;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    font-weight: 400;
+    padding: 10px;
+}
+
 .header__qr {
+    z-index: 1;
     background-color: var(--white-color);
     width: 186px;
     position: absolute;
@@ -118,15 +211,16 @@
 .header__noti {
     --growth-from: 0;
     --growth-to: 1;
+    z-index: 1;
     position: absolute;
     top: 110%;
     width: 400px;
     right: 0;
     background-color: var(--white-color);
-    border: 1px solid #d3d3d3;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
     display: none;
-    transform-origin: 90% top;
+    transform-origin: calc(100% - 32px) top;
     animation: growth linear .2s;
 }
 
@@ -159,7 +253,6 @@
 
 .header__noti-items {
     padding-left: 0;
-
 }
 
 .header__noti-item {
@@ -352,6 +445,11 @@
     margin-right: 40px;
 }
 
+.header-search__logo-link {
+    text-decoration: none;
+    color: transparent;
+}
+
 .header-search__search {
     background-color: var(--white-color);
     height: 40px;
@@ -389,6 +487,12 @@
     margin-right: auto;
 }
 
+.header__empty-cart .header__cart-items,
+.header__empty-cart .header__cart-heading,
+.header__empty-cart .header__cart-view {
+    display: none;
+}
+
 .header__cart-list {
     position: absolute;
     top: calc(100% + 6px);
@@ -397,9 +501,9 @@
     width: 400px;
     border-radius: 2px;
     box-shadow: 0 2px 3rem rgba(0, 0, 0, 0.2);
-    display: none;
     animation: growth ease-in .2s;
     cursor: default;
+    display: none;
 }
 
 .header__cart-list::after {
@@ -411,6 +515,103 @@
     border-style: solid;
     border-color: transparent transparent var(--white-color) transparent;
     cursor: pointer;
+}
+
+.header__cart-heading {
+    text-align: left;
+    margin: 8px 12px;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    color: #999;
+    font-weight: 400;
+
+}
+
+.header__cart-items {
+    padding-left: 0;
+    list-style: none;
+}
+
+.header__cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.header__cart-item:hover {
+    background-color: #f8f8f8;
+}
+
+.header__cart-item-img {
+    width: 42px;
+    height: 42px;
+    margin: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.header__cart-item-info {
+    width: 100%;
+    margin-right: 12px;
+}
+
+.header__cart-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__cart-item-name {
+    font-size: 1.4rem;
+    font-weight: 450;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.header__cart-item-price {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--primary-color);
+}
+
+.header__cart-item-mul {
+    font-size: 0.9rem;
+    color: #757575;
+    margin: 0 4px;
+}
+
+.header__cart-item-quan {
+    font-size: 1.2rem;
+    color: #757575;
+}
+
+.header__cart-item-body {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+}
+
+.header__cart-item-type {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #757575;
+}
+
+.header__cart-item-rm {
+    font-size: 1.4rem;
+    font-weight: 450;
+    color: var(--text-color);
+}
+
+.header__cart-item-rm:hover {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+.header__cart-view {
+    float: right;
+    margin: 0 12px 12px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .header__empty-cart-img {
@@ -472,6 +673,7 @@
     box-shadow: 0 0 5px rgb(189, 189, 189);
     display: none;
     overflow: hidden;
+
 }
 
 .header-search__search-heading {
@@ -514,6 +716,7 @@
     cursor: pointer;
 }
 
+.header__cart-view:hover,
 .header-search__search-btn:hover {
     opacity: 0.8;
 }
@@ -526,3 +729,4 @@
 .header-search__search-item a {
     display: block;
 }
+
