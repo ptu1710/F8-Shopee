@@ -113,9 +113,6 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.normal-btn {
     background-color: var(--white-color);
 }
 
@@ -139,4 +136,64 @@ body {
     justify-content: space-between;
     border-radius: 3px;
     background-color: #666;
+}
+
+.select-input {
+    position: relative;
+    min-width: 200px;
+    height: 36px;
+    padding: 0 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input__label {
+    font-size: 1.4rem;
+}
+
+.select-input__icon {
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+
+.select-input__list {
+    position: absolute;
+    list-style: none;
+    left: 0;
+    right: 0;
+    top: 28px;
+    padding: 4px 12px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    display: none;
+}
+
+.select-input__list::before {
+    content: "";
+    position: absolute;
+    height: 8px;
+    left: 0;
+    right: 0;
+    top: -4px;
+}
+
+.select-input__link {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.select-input__link:hover { 
+    color: var(--primary-color);
 }

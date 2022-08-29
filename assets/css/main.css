@@ -802,3 +802,72 @@
 }
 
 /* Sort & Filter */
+.filter {
+    display: flex;
+    align-items: center;
+    padding: 12px 22px;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.filter__label {
+    color: #555;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-right: 16px;
+}
+
+.filter__btn {
+    min-width: 90px;
+    margin: 0 6px;
+}
+
+.home__page {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.home__page-num {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-right: 22px;
+}
+
+.home__page-current {
+    color: var(--primary-color);
+}
+
+.home__page-nav {
+    width: 72px;
+    height: 36px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+.home__page-next {
+    border-right: 1px solid #eee;
+}
+
+.home__page-nav-btn {
+    flex: 1;
+    display: flex;
+    text-decoration: none;
+    background-color: var(--white-color);
+}
+
+.home__page-nav-btn--disable {
+    background-color: #f9f9f9;
+    cursor: default;
+}
+
+.home__page-nav-btn--disable .home__page-nav-icon {
+    color: #ccc;
+}
+
+.home__page-nav-icon {
+    margin: auto;
+    font-size: 1.4rem;
+    color: #555;
+}
