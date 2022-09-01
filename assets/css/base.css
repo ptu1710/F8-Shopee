@@ -7,6 +7,7 @@
     --rating-color: #ffce3e;
     --header-height: 120px;
     --navbar-height: 32px;
+    --sort-bar-height: 46px;
 }
 
 * {
@@ -25,16 +26,6 @@ body {
 }
 
 /* Responsive */
-.grid {
-    width: 1400px;
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.grid__full-width {
-    width: 100%;
-}
-
 .grid__row {
     display: flex;
     flex-wrap: wrap;
