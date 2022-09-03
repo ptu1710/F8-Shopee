@@ -168,3 +168,17 @@
         justify-content: center;
     }
 }
+
+@media screen and (max-width: 340px) {
+    .header-search__logo {
+        width: 90px;
+    }
+
+    .products-item__price-old {
+        font-size: 1.2rem;
+    }
+    
+    .products-item__price-new {
+        font-size: 1.4rem;
+    }
+}
