@@ -627,7 +627,6 @@
     width: 42px;
     height: 42px;
     margin: 12px;
-    border: 1px solid var(--border-color);
 }
 
 .header__cart-item-info {
@@ -654,7 +653,8 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     text-align: left;
-    padding-right: 8px;
+    /* padding-right: 8px; */
+    margin: 4px 8px 4px 0;
 }
 
 .header__cart-item-price {
@@ -671,13 +671,13 @@
 
 .header__cart-item-quan {
     font-size: 1.2rem;
+    line-height: 1.6rem;
     color: #757575;
 }
 
 .header__cart-item-body {
     display: flex;
     justify-content: space-between;
-    padding: 6px 0;
 }
 
 .header__cart-item-type {
